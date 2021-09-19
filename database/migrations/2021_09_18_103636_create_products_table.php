@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('image')->nullable();
             $table->string('quantity');
+            $table->float('price', 6, 2);
             $table->timestamps();
         });
     }

@@ -3,7 +3,7 @@
 @section('content')
 
   <div>
-    
+    <div class="container">
       <table class="table">
         <thead>
           <tr>
@@ -12,6 +12,7 @@
             <th scope="col">Descrizione</th>
             <th scope="col">Immagine</th>
             <th scope="col">Quantità</th>
+            <th scope="col">Prezzo</th>
             <th colspan="3">Actions</th>
           </tr>
         </thead>
@@ -22,11 +23,19 @@
               <th>{{ $product->slug }}</th>
               <td>{{ $product->description }}</td>
               {{-- <td><img src="{{ asset('storage/' . $product->image) }}" alt="immagine" width="50px" height="50px"></td> --}}
-              <td><img src="{{ asset('storage/' . $product->image ) }}" alt="immagine" width="50px" height="50px"></td>
+
+              <td>
+                @if ($product->image)
+                  <img src="{{ asset('storage/' . $product->image ) }}" alt="immagine" width="50px" height="50px">
+                @else
+                  <img src="{{ asset('img/image-not-available.png' ) }}" alt="immagine" width="50px" height="50px">
+                @endif
+              </td>
               <td>{{ $product->quantity }}</td>
+              <td>{{ $product->price }} euro</td>
               <td>
                 <button class="btn btn-success">
-                  <a href="{{ route('admin.products.show', $product) }}">Vedi</a>
+                  <a href="{{ route('admin.products.show', $product) }}">Dettaglio</a>
                 </button>
               </td>
               <td>
@@ -46,7 +55,8 @@
           
         </tbody>
       </table>
-    
+    </div>
+      
     {{ $products->links() }}
   </div>
 

@@ -40,7 +40,9 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request)
     {
+
         $data = $request->all();
+        /* dd($data); */
         $data['slug'] = Str::slug($data['name']);
         $slug_exist = Product::where('slug',$data['slug'])->first();
         $counter = 1;
@@ -99,6 +101,8 @@ class ProductController extends Controller
     {
 
         $data = $request->all();
+        /* dd($data); */
+
          if($product->name !== $data['name']){
             $slug = Str::slug($data['name'], '-');
             $slug_exist = Product::where('slug',$slug)->first();
@@ -120,7 +124,7 @@ class ProductController extends Controller
             }
             $image_path = Storage::put('products_img',$data['image']);
             $data['image'] = $image_path;
-        }
+        } 
 
         $product->update($data);
         return redirect()->route('admin.products.index');

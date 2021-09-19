@@ -27,7 +27,8 @@ class ProductRequest extends FormRequest
             'name' => 'required|min:5|max:255',
             'description' => 'required|min:5|max:500',
             'image' => 'nullable|image|max:32000',
-            'quantity' => 'required|numeric|integer'
+            'quantity' => 'required|numeric|integer|min:0',
+            'price' => 'required|numeric|min:0'
         ];
     }
 
@@ -44,7 +45,11 @@ class ProductRequest extends FormRequest
         'image.max' => 'Immagine troppo grande',
         'quantity.required' => 'Inserire una quantità',
         'quantity.numeric' => 'La quantità inserita non è un numero intero',
-        'quantity.integer' => 'La quantità deve essere un numero intero',       
+        'quantity.integer' => 'La quantità deve essere un numero intero',
+        'quantity.min' => 'Quantità non valida',
+        'price.required' => 'Inserire il prezzo del prodotto',
+        'price.numeric' => 'Prezzo inserito non valido',
+        'price.min' => 'Prezzo inserito non valido'       
       ];
     }
 }

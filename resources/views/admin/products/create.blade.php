@@ -36,10 +36,19 @@
 
       <div class="form-group">
         <label for="quantity">Disponibilità</label>
-        <input type="number" class="form-control @error('name') is-invalid @enderror" id="quantity" name="quantity" placeholder="Inserisci una quantità">
+        <input type="number" min="0" max="10000" class="form-control @error('name') is-invalid @enderror" id="quantity" name="quantity" placeholder="Inserisci una quantità">
       </div>
 
       @error('quantity')
+          <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+
+      <div class="form-group">
+        <label for="price">Prezzo</label>
+        <input type="number" min="0" max="10000" step="0.01" class="form-control @error('name') is-invalid @enderror" id="price" name="price" placeholder="Inserisci il prezzo del prodotto">
+      </div>
+
+      @error('price')
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 

@@ -11,6 +11,7 @@ class Product extends Model
       'slug',
       'description',
       'image',
-      'quantity'
+      'quantity', 
+      'price'
     ];
 }

@@ -43,6 +43,15 @@
           <div class="alert alert-danger">{{ $message }}</div>
       @enderror
 
+      <div class="form-group">
+        <label for="price">Prezzo</label>
+        <input type="number" min="0" max="10000" step="0.01" class="form-control @error('name') is-invalid @enderror" id="price" name="price" placeholder="Inserisci il prezzo del prodotto" value="{{ old('price', $product->price) }}">
+      </div>
+
+      @error('price')
+          <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
