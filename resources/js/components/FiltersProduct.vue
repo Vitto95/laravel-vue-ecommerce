@@ -37,15 +37,24 @@
                 <div class="filter-item">
                     <label for="availability">Disponibile</label>
                     <input type="checkbox" v-model="availability" />
+                    <p>{{ availability }}</p>
                 </div>
                 <!-- <div class="filter-item">
                     <label for="quantity">Quantità (min)</label>
                     <input id="quantity" type="number" v-model="quantity" />
                 </div> -->
             </div>
-
-            <div class="search-products-btn">
-                <button @click="emitFiltersData">Cerca</button>
+            <div class="filter-buttons">
+                <div class="search-products-btn">
+                    <button @click="emitFiltersData" class="custom-btn">
+                        Cerca
+                    </button>
+                </div>
+                <div class="reset-search-btn">
+                    <button @click="resetFilters" class="custom-btn">
+                        Reset
+                    </button>
+                </div>
             </div>
         </div>
         <!-- <p>Prezzo minimo: {{ minPrice }}</p>
@@ -75,6 +84,12 @@ export default {
                 availability: this.availability
                 /* quantity: this.quantity */
             });
+        },
+        resetFilters() {
+            this.nameProduct = "";
+            this.minPrice = "";
+            this.maxPrice = "";
+            this.availability = "";
         }
     }
 };
@@ -83,18 +98,6 @@ export default {
 <style lang="scss" scoped>
 aside.filters {
     padding: 15px;
-    .filters-title h2 {
-        font-family: "Montserrat";
-        text-align: center;
-        text-transform: uppercase;
-    }
-    .filter-container h4 {
-        font-family: "Montserrat";
-        text-transform: uppercase;
-    }
-    .filter-container label {
-        font-family: "Poppins";
-    }
 
     .filter-container {
         margin-top: 1rem;
@@ -113,7 +116,28 @@ aside.filters {
             }
         }
     }
-    .search-products-btn button {
+
+    .filters-title h2 {
+        font-family: "Montserrat";
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .filter-container h4 {
+        font-family: "Montserrat";
+        text-transform: uppercase;
+    }
+    .filter-container label {
+        font-family: "Poppins";
+    }
+
+    .filter-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-products-btn .custom-btn,
+    .reset-search-btn .custom-btn {
         font-family: "Poppins";
         padding: 0.5rem 0.75rem;
         border-radius: 5px;

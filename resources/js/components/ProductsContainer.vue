@@ -77,7 +77,9 @@ export default {
                         min: this.filtersObj.min,
                         max: this.filtersObj.max,
                         /* quantity: this.filtersObj.quantity, */
-                        availability: this.filtersObj.availability,
+                        availability: this.filtersObj.availability
+                            ? this.filtersObj.availability
+                            : "",
                         page: page
                     }
                 })

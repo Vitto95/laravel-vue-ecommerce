@@ -2314,6 +2314,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltersProduct",
   data: function data() {
@@ -2335,6 +2344,12 @@ __webpack_require__.r(__webpack_exports__);
         /* quantity: this.quantity */
 
       });
+    },
+    resetFilters: function resetFilters() {
+      this.nameProduct = "";
+      this.minPrice = "";
+      this.maxPrice = "";
+      this.availability = "";
     }
   }
 });
@@ -2521,7 +2536,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
           max: this.filtersObj.max,
 
           /* quantity: this.filtersObj.quantity, */
-          availability: this.filtersObj.availability,
+          availability: this.filtersObj.availability ? this.filtersObj.availability : "",
           page: page
         }
       }).then(function (res) {
@@ -2564,7 +2579,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "aside.filters[data-v-418a719f] {\n  padding: 15px;\n}\naside.filters .filters-title h2[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-align: center;\n  text-transform: uppercase;\n}\naside.filters .filter-container h4[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-transform: uppercase;\n}\naside.filters .filter-container label[data-v-418a719f] {\n  font-family: \"Poppins\";\n}\naside.filters .filter-container[data-v-418a719f] {\n  margin-top: 1rem;\n}\naside.filters .filter-container .filter-item[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f] {\n  height: 1.3rem;\n  border: none;\n  border-radius: 5px;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f]:focus {\n  outline: none;\n}\naside.filters .search-products-btn button[data-v-418a719f] {\n  font-family: \"Poppins\";\n  padding: 0.5rem 0.75rem;\n  border-radius: 5px;\n  border: none;\n  margin-top: 1.5rem;\n  background-color: white;\n  color: #1d68a7;\n  cursor: pointer;\n}\naside.filters .search-products-btn button[data-v-418a719f]:hover {\n  background-color: #3490dc;\n}", ""]);
+exports.push([module.i, "aside.filters[data-v-418a719f] {\n  padding: 15px;\n}\naside.filters .filter-container[data-v-418a719f] {\n  margin-top: 1rem;\n}\naside.filters .filter-container .filter-item[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f] {\n  height: 1.3rem;\n  border: none;\n  border-radius: 5px;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f]:focus {\n  outline: none;\n}\naside.filters .filters-title h2[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-align: center;\n  text-transform: uppercase;\n}\naside.filters .filter-container h4[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-transform: uppercase;\n}\naside.filters .filter-container label[data-v-418a719f] {\n  font-family: \"Poppins\";\n}\naside.filters .filter-buttons[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .search-products-btn .custom-btn[data-v-418a719f],\naside.filters .reset-search-btn .custom-btn[data-v-418a719f] {\n  font-family: \"Poppins\";\n  padding: 0.5rem 0.75rem;\n  border-radius: 5px;\n  border: none;\n  margin-top: 1.5rem;\n  background-color: white;\n  color: #1d68a7;\n  cursor: pointer;\n}\naside.filters .search-products-btn .custom-btn[data-v-418a719f]:hover,\naside.filters .reset-search-btn .custom-btn[data-v-418a719f]:hover {\n  background-color: #3490dc;\n}", ""]);
 
 // exports
 
@@ -4113,12 +4128,28 @@ var render = function() {
                 }
               }
             }
-          })
+          }),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(_vm.availability))])
         ])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "search-products-btn" }, [
-        _c("button", { on: { click: _vm.emitFiltersData } }, [_vm._v("Cerca")])
+      _c("div", { staticClass: "filter-buttons" }, [
+        _c("div", { staticClass: "search-products-btn" }, [
+          _c(
+            "button",
+            { staticClass: "custom-btn", on: { click: _vm.emitFiltersData } },
+            [_vm._v("\n                    Cerca\n                ")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "reset-search-btn" }, [
+          _c(
+            "button",
+            { staticClass: "custom-btn", on: { click: _vm.resetFilters } },
+            [_vm._v("\n                    Reset\n                ")]
+          )
+        ])
       ])
     ])
   ])
