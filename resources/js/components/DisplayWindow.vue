@@ -31,7 +31,7 @@ export default {
 
 <style>
 .display-window {
-    height: 100vh;
+    height: calc(100vh - 100px);
     display: grid;
     grid-template-columns: 300px 1fr;
 }
@@ -40,11 +40,14 @@ export default {
     background-color: lightgray;
 }
 
+/* .display-window .products-container {
+    background-color: lightskyblue;
+} */
+
 .display-window main.products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
-    background-color: lightskyblue;
 }
 </style>
