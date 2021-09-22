@@ -11,7 +11,9 @@ class ProductController extends Controller
 {
     public function index(Request $request){
 
-      $products = DB::table('products')->paginate(20);
+      /* $products = Product::all(); */
+      $products = Product::query();
+      /* $products = $products->paginate(20); */
       $prod_name = $request->prod_name;
       $min_price = $request->min;
       $max_price = $request->max;
@@ -19,20 +21,22 @@ class ProductController extends Controller
       $availability = $request->availability;
 
       if(! (is_null($prod_name))){
-        $products = DB::table('products')->where('name', $prod_name)->paginate(20);
+        $products = $products->where('name', $prod_name);
       }
       
       if(! (is_null($min_price) && is_null($max_price))){
-        $products = DB::table('products')->whereBetween('price',[$min_price, $max_price])->paginate(20);
+        $products = $products->whereBetween('price',[$min_price, $max_price]);
       }
 
       if($availability){
-        $products = DB::table('products')->where('quantity', '>', 0)->paginate(20);
+        $products = $products->where('quantity', '>', 0);
       }
 
       if(! (is_null($quantity))){
-        $products = DB::table('products')->where('quantity', '>=', $quantity)->paginate(20);
+        $products = DB::table('products')->where('quantity', '>=', $quantity);
       }
+
+      $products = $products->paginate(20);
 
       return response()->json($products);
     }
