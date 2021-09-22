@@ -36,7 +36,11 @@
                 <h4>Disponibilità</h4>
                 <div class="filter-item">
                     <label for="availability">Disponibile</label>
-                    <input type="checkbox" v-model="availability" />
+                    <input
+                        id="availability"
+                        type="checkbox"
+                        v-model="availability"
+                    />
                 </div>
                 <!-- <div class="filter-item">
                     <label for="quantity">Quantità (min)</label>
@@ -133,6 +137,7 @@ aside.filters {
     }
     .filter-container label {
         font-family: "Poppins";
+        cursor: pointer;
     }
 
     .filter-buttons {
@@ -169,7 +174,7 @@ aside.filters {
     }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 700px) {
     aside.filters {
         display: none;
         position: absolute;

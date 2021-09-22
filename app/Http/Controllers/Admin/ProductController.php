@@ -43,10 +43,15 @@ class ProductController extends Controller
 
         $data = $request->all();
         /* dd($data); */
+        //Creazione slug a partire dal nome del prodotto
         $data['slug'] = Str::slug($data['name']);
         $slug_exist = Product::where('slug',$data['slug'])->first();
+        
+        /* 
+          Ciclo while per creare un nuovo slug nel caso in cui 
+          quello precedentemente creato sia già esistente
+       */
         $counter = 1;
-
         while($slug_exist){
             $name = $data['name'] . '-' . $counter;
             $slug = Str::slug($name, '-');
@@ -55,6 +60,7 @@ class ProductController extends Controller
             $counter++;
         }
 
+        /* aggiunta immagine allo storage */
         if(array_key_exists('image', $data)){
           $image_path = Storage::put('products_img', $data['image']);
           $data['image'] = $image_path;
@@ -103,6 +109,9 @@ class ProductController extends Controller
         $data = $request->all();
         /* dd($data); */
 
+        /* 
+          Creazione nuovo slug se il nome del prodotto cambia
+        */
          if($product->name !== $data['name']){
             $slug = Str::slug($data['name'], '-');
             $slug_exist = Product::where('slug',$slug)->first();
@@ -118,6 +127,10 @@ class ProductController extends Controller
             $data['slug'] = $product->slug;
         }
 
+        /* 
+          Se l'immagine viene modificata, 
+          cancello la vecchia immagine e aggiungo quella nuova
+        */
         if(array_key_exists('image',$data)){
             if($product->image){
                 Storage::delete($product->image);

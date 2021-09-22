@@ -8,7 +8,7 @@
         <thead>
           <tr>
             <th scope="col">Nome</th>
-            <th scope="col">Immagine</th>
+            <th scope="col" class="hidden-xs">Immagine</th>
             <th scope="col">Quantità</th>
             <th scope="col">Prezzo</th>
             <th colspan="3" class="text-center">Actions</th>

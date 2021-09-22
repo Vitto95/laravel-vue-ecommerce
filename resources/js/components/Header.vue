@@ -40,7 +40,7 @@ header {
     }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 700px) {
     header .menu-mobile-icon {
         display: block;
         cursor: pointer;

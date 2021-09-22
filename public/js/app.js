@@ -2322,6 +2322,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "FiltersProduct",
   data: function data() {
@@ -2603,7 +2607,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "aside.filters[data-v-418a719f] {\n  background-color: #1574e6;\n  padding: 15px;\n}\naside.filters .filter-container[data-v-418a719f] {\n  margin-top: 1rem;\n}\naside.filters .filter-container .filter-item[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f] {\n  height: 1.3rem;\n  border: none;\n  border-radius: 5px;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f]:focus {\n  outline: none;\n}\naside.filters .filters-title h2[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-align: center;\n  text-transform: uppercase;\n}\naside.filters .filter-container h4[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-transform: uppercase;\n}\naside.filters .filter-container label[data-v-418a719f] {\n  font-family: \"Poppins\";\n}\naside.filters .filter-buttons[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .search-products-btn .custom-btn[data-v-418a719f],\naside.filters .reset-search-btn .custom-btn[data-v-418a719f] {\n  font-family: \"Poppins\";\n  padding: 0.5rem 0.75rem;\n  border-radius: 5px;\n  border: none;\n  margin-top: 1.5rem;\n  background-color: white;\n  color: #1d68a7;\n  cursor: pointer;\n}\naside.filters .search-products-btn .custom-btn[data-v-418a719f]:hover,\naside.filters .reset-search-btn .custom-btn[data-v-418a719f]:hover {\n  background-color: #3490dc;\n}\n@media all and (max-width: 1500px) {\naside.filters .filter-container[data-v-418a719f] {\n    text-align: center;\n}\naside.filters .filter-item[data-v-418a719f] {\n    flex-direction: column;\n    align-items: center;\n}\n}\n@media all and (max-width: 500px) {\naside.filters[data-v-418a719f] {\n    display: none;\n    position: absolute;\n    width: 100%;\n    z-index: 999;\n}\naside.filters.display-drop[data-v-418a719f] {\n    display: block;\n}\n}", ""]);
+exports.push([module.i, "aside.filters[data-v-418a719f] {\n  background-color: #1574e6;\n  padding: 15px;\n}\naside.filters .filter-container[data-v-418a719f] {\n  margin-top: 1rem;\n}\naside.filters .filter-container .filter-item[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f] {\n  height: 1.3rem;\n  border: none;\n  border-radius: 5px;\n}\naside.filters .filter-container .filter-item input[data-v-418a719f]:focus {\n  outline: none;\n}\naside.filters .filters-title h2[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-align: center;\n  text-transform: uppercase;\n}\naside.filters .filter-container h4[data-v-418a719f] {\n  font-family: \"Montserrat\";\n  text-transform: uppercase;\n}\naside.filters .filter-container label[data-v-418a719f] {\n  font-family: \"Poppins\";\n  cursor: pointer;\n}\naside.filters .filter-buttons[data-v-418a719f] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\naside.filters .search-products-btn .custom-btn[data-v-418a719f],\naside.filters .reset-search-btn .custom-btn[data-v-418a719f] {\n  font-family: \"Poppins\";\n  padding: 0.5rem 0.75rem;\n  border-radius: 5px;\n  border: none;\n  margin-top: 1.5rem;\n  background-color: white;\n  color: #1d68a7;\n  cursor: pointer;\n}\naside.filters .search-products-btn .custom-btn[data-v-418a719f]:hover,\naside.filters .reset-search-btn .custom-btn[data-v-418a719f]:hover {\n  background-color: #3490dc;\n}\n@media all and (max-width: 1500px) {\naside.filters .filter-container[data-v-418a719f] {\n    text-align: center;\n}\naside.filters .filter-item[data-v-418a719f] {\n    flex-direction: column;\n    align-items: center;\n}\n}\n@media all and (max-width: 700px) {\naside.filters[data-v-418a719f] {\n    display: none;\n    position: absolute;\n    width: 100%;\n    z-index: 999;\n}\naside.filters.display-drop[data-v-418a719f] {\n    display: block;\n}\n}", ""]);
 
 // exports
 
@@ -2622,7 +2626,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: 100px;\n  padding: 20px;\n  background-color: #1574e6;\n}\nheader h1 {\n  font-family: \"Montserrat\";\n  text-transform: uppercase;\n}\nheader .menu-mobile-icon {\n  display: none;\n}\n@media all and (max-width: 500px) {\nheader .menu-mobile-icon {\n    display: block;\n    cursor: pointer;\n}\n}", ""]);
+exports.push([module.i, "header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: 100px;\n  padding: 20px;\n  background-color: #1574e6;\n}\nheader h1 {\n  font-family: \"Montserrat\";\n  text-transform: uppercase;\n}\nheader .menu-mobile-icon {\n  display: none;\n}\n@media all and (max-width: 700px) {\nheader .menu-mobile-icon {\n    display: block;\n    cursor: pointer;\n}\n}", ""]);
 
 // exports
 
@@ -2698,7 +2702,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.display-window {\r\n    height: calc(100vh - 100px);\r\n    display: grid;\r\n    grid-template-columns: 300px 1fr;\n}\r\n\r\n/* .display-window .products-container {\r\n    background-color: lightskyblue;\r\n} */\n.display-window main.products {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\r\n    grid-gap: 20px;\r\n    align-items: stretch;\n}\n@media all and (max-width: 1500px) {\n.display-window {\r\n        grid-template-columns: 200px 1fr;\n}\n}\n@media all and (max-width: 500px) {\n.display-window {\r\n        grid-template-columns: 1fr;\n}\n}\r\n", ""]);
+exports.push([module.i, "\n.display-window {\r\n    height: calc(100vh - 100px);\r\n    display: grid;\r\n    grid-template-columns: 300px 1fr;\n}\r\n\r\n/* .display-window .products-container {\r\n    background-color: lightskyblue;\r\n} */\n.display-window main.products {\r\n    display: grid;\r\n    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\r\n    grid-gap: 20px;\r\n    align-items: stretch;\n}\n@media all and (max-width: 1500px) {\n.display-window {\r\n        grid-template-columns: 200px 1fr;\n}\n}\n@media all and (max-width: 700px) {\n.display-window {\r\n        grid-template-columns: 1fr;\n}\n}\r\n", ""]);
 
 // exports
 
@@ -4130,7 +4134,7 @@ var render = function() {
                 expression: "availability"
               }
             ],
-            attrs: { type: "checkbox" },
+            attrs: { id: "availability", type: "checkbox" },
             domProps: {
               checked: Array.isArray(_vm.availability)
                 ? _vm._i(_vm.availability, null) > -1

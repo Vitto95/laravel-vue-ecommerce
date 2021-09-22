@@ -18,6 +18,7 @@ class ProductController extends Controller
       $quantity = $request->quantity;
       $availability = $request->availability;
 
+      //Filtri per nome, range di prezzo, e disponibilità.
       if(! (is_null($prod_name))){
         $products = $products->where('name', 'like' , '%' . $prod_name . '%' );
       }

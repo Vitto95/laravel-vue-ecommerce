@@ -9,7 +9,7 @@
       
       <div class="form-group">
         <label for="name-product">Nome Prodotto</label>
-        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name-product" name="name" placeholder="Nome Prodotto">
+        <input type="text" class="form-control @error('name') is-invalid @enderror" id="name-product" name="name" placeholder="Nome Prodotto" value="{{ old('name')}}">
       </div>
 
       @error('name')
@@ -18,7 +18,7 @@
       
       <div class="form-group">
         <label for="description-product">Descrizione Prodotto</label>
-        <textarea class="form-control @error('name') is-invalid @enderror" id="description-product" name="description" rows="3"></textarea>
+        <textarea class="form-control @error('name') is-invalid @enderror" id="description-product" name="description" rows="3">{{ old('description')}}</textarea>
       </div>
 
       @error('description')
@@ -36,7 +36,7 @@
 
       <div class="form-group">
         <label for="quantity">Disponibilità</label>
-        <input type="number" min="0" max="10000" class="form-control @error('name') is-invalid @enderror" id="quantity" name="quantity" placeholder="Inserisci una quantità">
+        <input type="number" min="0" max="10000" class="form-control @error('name') is-invalid @enderror" id="quantity" name="quantity" placeholder="Inserisci una quantità" value="{{ old('quantity')}}">
       </div>
 
       @error('quantity')
@@ -45,7 +45,7 @@
 
       <div class="form-group">
         <label for="price">Prezzo</label>
-        <input type="number" min="0" max="10000" step="0.01" class="form-control @error('name') is-invalid @enderror" id="price" name="price" placeholder="Inserisci il prezzo del prodotto">
+        <input type="number" min="0" max="10000" step="0.01" class="form-control @error('name') is-invalid @enderror" id="price" name="price" placeholder="Inserisci il prezzo del prodotto" value="{{ old('price') }}">
       </div>
 
       @error('price')
