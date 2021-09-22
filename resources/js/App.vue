@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="wrapper-app">
         <Header />
         <DisplayWindow />
     </div>
@@ -27,5 +27,13 @@ export default {
 
 ul {
     list-style-type: none;
+}
+
+.wrapper-app {
+    width: 100%;
+}
+
+input {
+    padding-left: 10px;
 }
 </style>

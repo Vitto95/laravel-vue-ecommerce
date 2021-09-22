@@ -10,10 +10,8 @@ use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
     public function index(Request $request){
-
-      /* $products = Product::all(); */
-      $products = Product::query();
-      /* $products = $products->paginate(20); */
+      
+      $products = Product::query()->orderBy('created_at', 'DESC');
       $prod_name = $request->prod_name;
       $min_price = $request->min;
       $max_price = $request->max;
@@ -21,7 +19,7 @@ class ProductController extends Controller
       $availability = $request->availability;
 
       if(! (is_null($prod_name))){
-        $products = $products->where('name', $prod_name);
+        $products = $products->where('name', 'like' , '%' . $prod_name . '%' );
       }
       
       if(! (is_null($min_price) && is_null($max_price))){

@@ -36,18 +36,26 @@ export default {
     grid-template-columns: 300px 1fr;
 }
 
-.display-window aside.filters {
-    background-color: lightgray;
-}
-
 /* .display-window .products-container {
     background-color: lightskyblue;
 } */
 
 .display-window main.products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 20px;
     align-items: stretch;
+}
+
+@media all and (max-width: 1500px) {
+    .display-window {
+        grid-template-columns: 200px 1fr;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .display-window {
+        grid-template-columns: 1fr;
+    }
 }
 </style>

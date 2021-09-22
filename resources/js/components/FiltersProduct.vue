@@ -37,7 +37,6 @@
                 <div class="filter-item">
                     <label for="availability">Disponibile</label>
                     <input type="checkbox" v-model="availability" />
-                    <p>{{ availability }}</p>
                 </div>
                 <!-- <div class="filter-item">
                     <label for="quantity">Quantità (min)</label>
@@ -77,6 +76,10 @@ export default {
     },
     methods: {
         emitFiltersData() {
+            let menuFilters = document.querySelector(".filters");
+            if (menuFilters.classList.contains("display-drop")) {
+                menuFilters.classList.remove("display-drop");
+            }
             this.$emit("filterData", {
                 nameProd: this.nameProduct,
                 min: this.minPrice,
@@ -90,6 +93,7 @@ export default {
             this.minPrice = "";
             this.maxPrice = "";
             this.availability = "";
+            this.emitFiltersData();
         }
     }
 };
@@ -97,6 +101,7 @@ export default {
 
 <style lang="scss" scoped>
 aside.filters {
+    background-color: #1574e6;
     padding: 15px;
 
     .filter-container {
@@ -149,6 +154,30 @@ aside.filters {
         &:hover {
             background-color: #3490dc;
         }
+    }
+}
+
+@media all and (max-width: 1500px) {
+    aside.filters {
+        .filter-container {
+            text-align: center;
+        }
+        .filter-item {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media all and (max-width: 500px) {
+    aside.filters {
+        display: none;
+        position: absolute;
+        width: 100%;
+        z-index: 999;
+    }
+    aside.filters.display-drop {
+        display: block;
     }
 }
 </style>

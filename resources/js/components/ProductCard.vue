@@ -3,8 +3,14 @@
         <div class="product-name">
             <h4>{{ product.name }}</h4>
         </div>
-        <div v-if="product.image === null" class="img-container">
+        <div
+            v-if="product.image === null"
+            class="img-container container-image"
+        >
             <img src="/img/image-not-available.png" alt="image-not-available" />
+        </div>
+        <div v-else class="container-image">
+            <img :src="'/storage/' + product.image" :alt="product.slug" />
         </div>
         <div class="product-bottom-content">
             <div class="product-description">
@@ -60,17 +66,30 @@ export default {
 <style lang="scss" scoped>
 .card {
     position: relative;
-    background-color: lightgray;
+    height: 100%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 10px;
+    /* background-color: #1574e6; */
     .quantity-circle {
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        background-color: lightcoral;
+        /*  background-color: lightcoral; */
     }
     .product-name h4 {
         font-family: "Montserrat", sans-serif;
         font-size: 1vw;
         text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .container-image {
+        height: 400px;
+        display: flex;
+        align-items: center;
     }
 
     .product-bottom-content {
@@ -78,7 +97,11 @@ export default {
         row-gap: 10px;
         padding: 10px;
         font-family: "Poppins", sans-serif;
-        font-size: 0.8vw;
+        font-size: 0.9vw;
+        .product-description {
+            max-height: 150px;
+            overflow-y: auto;
+        }
         .product-quantity {
             display: flex;
             justify-content: space-between;
@@ -99,6 +122,34 @@ export default {
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+/* Media Queries */
+
+@media all and(max-width: 1500px) {
+    .card {
+        .product-name {
+            h4 {
+                font-size: 1.2rem;
+            }
+        }
+        .product-bottom-content {
+            font-size: 1rem;
+            .product-description {
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 780px) {
+    .card {
+        .container-image {
+            height: auto;
+        }
     }
 }
 </style>
