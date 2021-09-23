@@ -8,9 +8,9 @@
         <thead>
           <tr>
             <th scope="col">Nome</th>
-            <th scope="col" class="hidden-xs">Immagine</th>
-            <th scope="col">Quantità</th>
-            <th scope="col">Prezzo</th>
+            <th scope="col" class="d-none d-md-table-cell">Immagine</th>
+            <th scope="col" class="d-none d-md-table-cell">Quantità</th>
+            <th scope="col" class="d-none d-md-table-cell">Prezzo</th>
             <th colspan="3" class="text-center">Actions</th>
           </tr>
         </thead>
@@ -20,15 +20,15 @@
               <th>{{ $product->name }}</th>
               {{-- <td><img src="{{ asset('storage/' . $product->image) }}" alt="immagine" width="50px" height="50px"></td> --}}
 
-              <td>
+              <td class="d-none d-md-table-cell">
                 @if ($product->image)
                   <img src="{{ asset('storage/' . $product->image ) }}" alt="immagine" width="50px" height="50px">
                 @else
                   <img src="{{ asset('img/image-not-available.png' ) }}" alt="immagine" width="50px" height="50px">
                 @endif
               </td>
-              <td>{{ $product->quantity }}</td>
-              <td>{{ $product->price }} euro</td>
+              <td class="d-none d-md-table-cell">{{ $product->quantity }}</td>
+              <td class="d-none d-md-table-cell">{{ $product->price }} euro</td>
               <td>
                 <button class="btn btn-outline-success">
                   <a href="{{ route('admin.products.show', $product) }}">Dettaglio</a>

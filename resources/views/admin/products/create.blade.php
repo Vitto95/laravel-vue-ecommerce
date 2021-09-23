@@ -53,6 +53,7 @@
       @enderror
 
       <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="btn btn-dark"><a href="{{ route('admin.products.index') }}">Back</a></div>
     </form>
   </div>
 @endsection

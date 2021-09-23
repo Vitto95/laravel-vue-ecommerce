@@ -85,7 +85,7 @@ export default {
                 menuFilters.classList.remove("display-drop");
             }
             this.$emit("filterData", {
-                nameProd: this.nameProduct,
+                nameProd: this.nameProduct.trim(),
                 min: this.minPrice,
                 max: this.maxPrice,
                 availability: this.availability

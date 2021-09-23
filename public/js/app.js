@@ -2346,7 +2346,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.$emit("filterData", {
-        nameProd: this.nameProduct,
+        nameProd: this.nameProduct.trim(),
         min: this.minPrice,
         max: this.maxPrice,
         availability: this.availability
